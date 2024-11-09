@@ -1,70 +1,29 @@
-# Getting Started with Create React App
+1. 홈페이지에서 today's pick, 인기영화, 개봉예정 영화, 평점 높은 영화, 상영 중 영화 4개 카테고리 별로 바로 확인이 가능
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+2. 오른쪽 상단 검색 기능으로 과거 상영했던 영화 정보(제목, 런타임, 출연 배우, 줄거리, 장르)를 확인 가능하며, 리뷰 남기는 것 가능 - detail 페이지
 
-## Available Scripts
+3. 디테일 페이지에는 영화 설명 하단에 다른 추천영화 콘텐츠도 구성(슬라이드 형식)
 
-In the project directory, you can run:
+4. 홈페이지(today's pick), 디테일 페이지 영화 설명 하단 부분 리뷰 기능 추가
 
-### `npm start`
+5. 반응형: 가로 600px~모바일 : 우측 상단 3개 메뉴를 메뉴바로 통합함,(메뉴 바 클릭 시 3개 메뉴가 나오도록)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- [] Router 설정
+- [] 각 폴더, 파일 등 구성
+- [] api 설정
+- [] Loading, Header, Footer 글로벌 컴포넌트 구성
+- [] 웹 폰트 설정
+- [] 각 페이지 UI 작업 및 반응형
+- [] Helmet
+- [] Header Scroll Event
+- [] Deploy
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+설치항목
+- [] npm i react-router-dom
+- [] npm i styled-components
+- [] npm i styled-reset
+- [] swiper
+- [] font-awesome
+- [] npm i react-hook-form
+- [] helmet-async
+- [] react icons
