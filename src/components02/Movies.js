@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { W500_URL } from "../constants/ImageUrl";
 
 const Container = styled.section`
+  width: 100%;
   padding: 0 ${mainStyle.moPadding};
   @media screen and (min-width: 450px) {
     padding: 0 ${mainStyle.pcPadding};

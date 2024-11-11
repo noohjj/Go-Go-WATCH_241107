@@ -6,6 +6,7 @@ import Login from "./pages/login/Login";
 import SignUp from "./pages/signup/SignUp";
 import PageNotFound from "./pages/PageNotFound.js";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 const Router = () => {
   return (
@@ -19,6 +20,7 @@ const Router = () => {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/*" element={<PageNotFound />} />
       </Routes>
+      <Footer />
     </HashRouter>
   );
 };

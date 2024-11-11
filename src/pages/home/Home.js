@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import { nowPlaying, popular, topRated, upComing } from "../../api";
+import "swiper/css";
 import Movies from "../../components02/Movies";
 import Banner from "../../components/Banner";
+import TodayPick from "../../components/TodayPick";
 
 const Home = () => {
   const [nowData, setNowData] = useState();
@@ -51,6 +53,8 @@ const Home = () => {
       {nowData && (
         <div>
           <Banner data={nowData} />
+
+          <TodayPick />
           <Movies data={nowData} title="현재 상영중" />
           <Movies data={popData} title="인기영화" />
           <Movies data={topData} title="랭킹 영화" />
