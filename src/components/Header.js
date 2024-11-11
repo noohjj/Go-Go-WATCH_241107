@@ -21,16 +21,22 @@ const Container = styled.header`
 
 const Logo = styled.h3`
   font-size: 26px;
-  font-weight: 700;
+  font-family: "Racing Sans One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
   a {
-    color: crimson;
+    color: #f90556;
   }
 `;
 
 const Menu = styled.ul`
   display: flex;
+  justify-content: center;
+  align-items: center;
   li {
-    margin-left: 150px;
+    margin-right: 100px;
+    font-size: 24px;
+    font-weight: bold;
     @media screen and (max-width: 650px) {
       margin-left: 50px;
     }
@@ -38,6 +44,18 @@ const Menu = styled.ul`
       color: #fff;
     }
   }
+`;
+
+const LoginBox = styled.div`
+  width: 200px;
+  height: 40px;
+  color: #fff;
+  background-color: #f90556;
+  text-align: center;
+  line-height: 40px;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 30px;
 `;
 
 const Header = () => {
@@ -48,7 +66,7 @@ const Header = () => {
     const current = headerRef.current;
     console.log(pageY);
 
-    if (pageY >= 400) {
+    if (pageY >= 300) {
       current.style.position = "fixed";
       current.style.backgroundColor = "rgba(0,0,0,0.5)";
       current.style.backgroundFilter = "blur(10px)";
@@ -74,8 +92,13 @@ const Header = () => {
           <Link to={"/search"}>검색</Link>
         </li>
         <li>
-            <Link to={"/signup"}>회원가입</Link>
+          <Link to={"/signup"}>회원가입</Link>
         </li>
+        <Link to={"/login"}>
+          <LoginBox>
+            <h3>Go-Go Login</h3>
+          </LoginBox>
+        </Link>
       </Menu>
     </Container>
   );

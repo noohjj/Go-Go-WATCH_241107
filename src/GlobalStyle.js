@@ -12,6 +12,12 @@ ${reset}
     box-sizing: border-box;
 }
 
+.racing-sans-one-regular {
+  font-family: "Racing Sans One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
 body{
     font-family: "Noto Sans KR", sans-serif;
     letter-spacing: -1px;
