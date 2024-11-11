@@ -10,18 +10,20 @@ import Footer from "./components/Footer";
 
 const Router = () => {
   return (
-    <HashRouter>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/search" element={<Search />} />
-        <Route path="/detail/:id" element={<Detail />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<SignUp />} />
-        <Route path="/*" element={<PageNotFound />} />
-      </Routes>
-      <Footer />
-    </HashRouter>
+    <>
+      <HashRouter>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/search" element={<Search />} />
+          <Route path="/detail/:id" element={<Detail />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/*" element={<PageNotFound />} />
+        </Routes>
+        <Footer />
+      </HashRouter>
+    </>
   );
 };
 

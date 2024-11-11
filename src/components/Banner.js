@@ -3,7 +3,7 @@ import { mainStyle } from "../GlobalStyle";
 import { ORIGINAL_URL } from "../constants/ImageUrl";
 
 const MainBanner = styled.section`
-  height: 80vh;
+  height: 100vh;
   background: url(${ORIGINAL_URL}${(props) => props.$coverImg}) no-repeat
     center/cover;
   padding: 0 ${mainStyle.moPadding};

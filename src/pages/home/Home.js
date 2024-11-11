@@ -4,6 +4,7 @@ import "swiper/css";
 import Movies from "../../components02/Movies";
 import Banner from "../../components/Banner";
 import TodayPick from "../../components/TodayPick";
+import Footer from "../../components/Footer";
 
 const Home = () => {
   const [nowData, setNowData] = useState();

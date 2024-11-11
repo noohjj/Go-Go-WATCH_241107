@@ -5,31 +5,34 @@ import { styled } from "styled-components";
 import { mainStyle } from "../GlobalStyle";
 
 const Container = styled.div`
-  color: "white";
-  padding: 0 ${mainStyle.pcPadding};
-  width: 100%;
-  height: 1000px;
-  background-color: black;
-  align-items: center;
   margin-top: 150px;
+  color: "white";
+  padding: 30px ${mainStyle.pcPadding};
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   h2 {
     font-size: 30px;
   }
 `;
 
-const AllWrap = styled.div`
-  justify-content: center;
-  align-items: center;
-`;
+const AllWrap = styled.div``;
 
 const Wrap = styled.div`
   display: flex;
+  margin-top: 20px;
 `;
 
 const Image = styled.div`
+  width: 30%;
+  height: 30%;
   img {
-    width: "100%";
-    border-radius: "10px";
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
   }
 `;
 
@@ -43,13 +46,41 @@ const Info = styled.div`
 
 const Sub = styled.div`
   p {
-    font-size: 25px;
+    font-size: 20px;
     margin-top: 30px;
+    line-height: 30px;
   }
   height: 100%;
 `;
 
-const Review = styled.div``;
+const Review = styled.div`
+  width: 100%;
+  height: 300px;
+  padding: ${mainStyle.moPadding};
+  margin-top: 40px;
+  background-color: #1d1d1d;
+  border-radius: 20px;
+  h4 {
+    font-size: 20px;
+  }
+  input {
+    margin-top: 20px;
+    width: 100%;
+    height: 60px;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: black;
+    font-size: 20px;
+    color: white;
+  }
+  button {
+    margin-top: 20px;
+    height: 40px;
+    background-color: black;
+    color: white;
+    border-radius: 20px;
+  }
+`;
 
 const TodayPick = () => {
   const [movies, setMovies] = useState([]);
@@ -70,7 +101,7 @@ const TodayPick = () => {
       setCurrentMovieIndex((prevIndex) =>
         movies.length ? (prevIndex + 1) % movies.length : 0
       );
-    }, 60000);
+    }, 15000);
 
     return () => clearInterval(intervalId);
   }, [movies]);
@@ -91,13 +122,13 @@ const TodayPick = () => {
     <Container>
       <AllWrap>
         <h2>TODAY's Pick</h2>
+
         {currentMovie ? (
           <Wrap>
             <Image>
               <img
                 src={`${W500_URL}${currentMovie.poster_path}`} // W500_URL 사용
                 alt={currentMovie.title}
-                style={{}}
               />
             </Image>
             <Info>
@@ -105,7 +136,10 @@ const TodayPick = () => {
               <Sub>
                 <p>개봉일: {currentMovie.release_date}</p>
                 <p>평점: {currentMovie.vote_average}점</p>
-                <p>줄거리: {currentMovie.overview}</p>
+                <p>
+                  줄거리:
+                  <br /> {currentMovie.overview}
+                </p>
               </Sub>
             </Info>
           </Wrap>
@@ -120,7 +154,6 @@ const TodayPick = () => {
             placeholder="여기에 리뷰를 입력하세요"
             value={inputReview}
             onChange={(e) => setInputReview(e.target.value)}
-            style={{ width: "100%", padding: "10px", marginBottom: "10px" }}
           />
           <button onClick={handleReviewSubmit} style={{ width: "100%" }}>
             리뷰 남기기
