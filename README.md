@@ -11,6 +11,8 @@
 6. localstorage 함수를 사용하여 남긴 리뷰가 남아있도록 구성
    ex:const storedReviews = localStorage.getItem("reviews");
 
+7. 디테일 페이지에도 리뷰 남기기 가능 
+
 - [x] Router 설정
 - [x] 각 폴더, 파일 등 구성
 - [x] api 설정
