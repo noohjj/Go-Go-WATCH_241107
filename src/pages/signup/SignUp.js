@@ -57,7 +57,7 @@ const Box = styled.div`
     font-weight: 500;
   }
 `;
-const Form = styled.div`
+const Form = styled.form`
   margin-top: 30px;
   input {
     all: unset;
@@ -124,7 +124,7 @@ const SignUp = () => {
     localStorage.setItem("password", password);
 
     alert("가입 되었습니다 Go Go!");
-    navi("/signin");
+    navi("/login");
   };
 
   return (

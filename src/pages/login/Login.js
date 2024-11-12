@@ -58,7 +58,7 @@ const Box = styled.div`
     font-weight: 500;
   }
 `;
-const Form = styled.div`
+const Form = styled.form`
   margin-top: 30px;
   input {
     all: unset;
@@ -91,6 +91,7 @@ const Form = styled.div`
 
 const ErrorMessage = styled.div`
   color: #f90556;
+  margin-top:10px;
   margin-bottom: 10px;
   @media screen and (max-width: 500px) {
     font-size: 14px;
