@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/Go-Go-WATCH_241107/static/css/main.3c70d7db.css",
+    "main.js": "/Go-Go-WATCH_241107/static/js/main.5a4d9693.js",
+    "static/media/slate.jpg": "/Go-Go-WATCH_241107/static/media/slate.4514c88da03b8e3ca472.jpg",
+    "index.html": "/Go-Go-WATCH_241107/index.html",
+    "main.3c70d7db.css.map": "/Go-Go-WATCH_241107/static/css/main.3c70d7db.css.map",
+    "main.5a4d9693.js.map": "/Go-Go-WATCH_241107/static/js/main.5a4d9693.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3c70d7db.css",
+    "static/js/main.5a4d9693.js"
+  ]
+}
