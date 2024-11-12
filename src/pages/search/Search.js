@@ -20,6 +20,13 @@ const Form = styled.form`
   }
 `;
 
+const Text = styled.div`
+  padding: 300px;
+  font-size: 50px;
+  font-weight: 500;
+  text-align: center;
+`;
+
 const ConWrap = styled.div`
   margin-top: 100px;
   display: grid;
@@ -76,6 +83,8 @@ const Search = () => {
           placeholder="영화 제목"
         />
       </Form>
+
+      {!term && <Text>검색어를 입력해주세요!</Text>}
 
       {term && (
         <ConWrap>

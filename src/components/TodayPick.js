@@ -15,19 +15,32 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
   h2 {
     font-size: 30px;
   }
   @media screen and (max-width: 600px) {
+    display: flex;
+    flex-direction: column;
     padding: 20px ${mainStyle.moPadding};
   }
 `;
 
-const AllWrap = styled.div``;
+const AllWrap = styled.div`
+  h2 {
+    font-size: 30px;
+    font-family: "Racing Sans One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+`;
 
 const Wrap = styled.div`
   display: flex;
   margin-top: 20px;
+  @media screen and (max-width: 600px) {
+    flex-direction: column;
+  }
 `;
 
 const Image = styled.div`
@@ -43,13 +56,13 @@ const Image = styled.div`
     height: 80%;
   }
   @media screen and (max-width: 600px) {
-    width: 300%;
-    height: 300%;
+    width: 100%;
+    height: 100%;
   }
 `;
 
 const Info = styled.div`
-  margin-left: 50px;
+  margin-left: 40px;
   h3 {
     font-size: 40px;
     font-weight: bold;
@@ -66,17 +79,18 @@ const Info = styled.div`
       font-size: 15px;
       margin-top: 10px;
       line-height: 20px;
-      padding: 0 ${mainStyle.moPadding};
     }
   }
   @media screen and (max-width: 1000px) {
     h3 {
-      margin-left: 10px;
+      margin-left: 0;
       font-size: 20px;
     }
   }
 
   @media screen and (max-width: 600px) {
+    margin-left: 0;
+    margin-top: 30px;
     h3 {
       font-size: 15px;
     }
@@ -90,8 +104,12 @@ const Review = styled.div`
   margin-top: 40px;
   background-color: #1d1d1d;
   border-radius: 20px;
+  overflow-y: scroll;
   h4 {
-    font-size: 20px;
+    font-size: 30px;
+    font-family: "Racing Sans One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
   }
   input {
     margin-top: 20px;
@@ -136,16 +154,35 @@ const TodayPick = () => {
     return () => clearInterval(intervalId);
   }, [movies]);
 
+  useEffect(() => {
+    const storedReviews = {};
+    movies.forEach((movie) => {
+      const movieReviews = localStorage.getItem(`reviews_${movie.id}`);
+      if (movieReviews) {
+        storedReviews[movie.id] = movieReviews.split("\n");
+      }
+    });
+    setReviews(storedReviews);
+  }, [movies]);
+
   const currentMovie = movies[currentMovieIndex];
 
   const handleReviewSubmit = () => {
     if (inputReview.trim() === "") return;
 
-    setReviews((prevReviews) => ({
-      ...prevReviews,
-      [currentMovie.id]: [...(prevReviews[currentMovie.id] || []), inputReview],
-    }));
+    const updatedReviews = {
+      ...reviews,
+      [currentMovie.id]: [...(reviews[currentMovie.id] || []), inputReview],
+    };
+
+    setReviews(updatedReviews);
     setInputReview("");
+
+    // 개별 리뷰 문자열을 "\n"으로 구분하여 저장
+    localStorage.setItem(
+      `reviews_${currentMovie.id}`,
+      updatedReviews[currentMovie.id].join("\n")
+    );
   };
 
   return (
@@ -177,7 +214,7 @@ const TodayPick = () => {
         )}
 
         <Review>
-          <h4>리뷰</h4>
+          <h4>Go-Go REVIEW</h4>
           <input
             type="text"
             placeholder="여기에 리뷰를 입력하세요"

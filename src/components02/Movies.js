@@ -6,7 +6,7 @@ import { W500_URL } from "../constants/ImageUrl";
 
 const Container = styled.section`
   width: 100%;
-  padding: 0 ${mainStyle.moPadding};
+  padding: 0 ${mainStyle.pcPadding};
   @media screen and (min-width: 450px) {
     padding: 0 ${mainStyle.pcPadding};
   }

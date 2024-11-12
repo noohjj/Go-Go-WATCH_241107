@@ -50,6 +50,31 @@ const TitleWrap = styled.div`
     opacity: 0.7;
     letter-spacing: 0;
   }
+  @media screen and (max-width: 1000px) {
+    h3 {
+      font-size: 35px;
+      margin-bottom: 20px;
+    }
+    li {
+      font-size: 15px;
+    }
+  }
+  @media screen and (max-width: 600px) {
+    h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+    li {
+      font-size: 12px;
+    }
+    p {
+      font-size: 12px;
+      line-height: 20px;
+      margin-top: 20px;
+      opacity: 0.7;
+      letter-spacing: 0;
+    }
+  }
 `;
 
 const Review = styled.div`
@@ -59,7 +84,9 @@ const Review = styled.div`
   margin-top: 40px;
   background-color: black;
   border-radius: 20px;
+  overflow-y: scroll;
   h4 {
+    font-family: "Racing Sans One", sans-serif;
     font-size: 20px;
   }
   input {
@@ -79,6 +106,15 @@ const Review = styled.div`
     color: white;
     border-radius: 20px;
   }
+  @media screen and (max-width: 600px) {
+    input {
+      font-size: 15px;
+      height: 30px;
+    }
+    button {
+      height: 30px;
+    }
+  }
 `;
 
 const Detail = () => {
@@ -88,7 +124,6 @@ const Detail = () => {
   const [reviews, setReviews] = useState({});
   const [inputReview, setInputReview] = useState("");
 
-  // localStorage에서 리뷰 불러오기
   useEffect(() => {
     const storedReviews = localStorage.getItem("reviews");
     if (storedReviews) {
@@ -96,7 +131,6 @@ const Detail = () => {
     }
   }, []);
 
-  // 영화 상세 데이터 불러오기
   useEffect(() => {
     (async () => {
       try {
@@ -109,11 +143,9 @@ const Detail = () => {
     })();
   }, [id]);
 
-  // 리뷰 제출 함수
   const handleReviewSubmit = () => {
     if (inputReview.trim() === "") return;
 
-    // 현재 영화 ID에 해당하는 리뷰 목록 업데이트
     const updatedReviews = {
       ...reviews,
       [id]: [...(reviews[id] || []), inputReview],
@@ -122,7 +154,6 @@ const Detail = () => {
     setReviews(updatedReviews);
     setInputReview("");
 
-    // localStorage에 리뷰 저장
     localStorage.setItem("reviews", JSON.stringify(updatedReviews));
   };
 
@@ -154,7 +185,7 @@ const Detail = () => {
                 </TitleWrap>
               </Container>
               <Review>
-                <h4>리뷰</h4>
+                <h4>Go-Go REVIEW</h4>
                 <input
                   type="text"
                   placeholder="여기에 리뷰를 입력하세요"
