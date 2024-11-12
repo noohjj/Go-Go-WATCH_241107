@@ -18,6 +18,9 @@ const Container = styled.div`
   h2 {
     font-size: 30px;
   }
+  @media screen and (max-width: 600px) {
+    padding: 20px ${mainStyle.moPadding};
+  }
 `;
 
 const AllWrap = styled.div``;
@@ -25,19 +28,23 @@ const AllWrap = styled.div``;
 const Wrap = styled.div`
   display: flex;
   margin-top: 20px;
-  @media screen and (max-width: 600px) {
-    display: flex;
-    flex-direction: column;
-  }
 `;
 
 const Image = styled.div`
-  width: 30%;
-  height: 30%;
+  width: 50%;
+  height: 50%;
   img {
     width: 100%;
     height: 100%;
     border-radius: 10px;
+  }
+  @media screen and (max-width: 1000px) {
+    width: 80%;
+    height: 80%;
+  }
+  @media screen and (max-width: 600px) {
+    width: 300%;
+    height: 300%;
   }
 `;
 
@@ -47,15 +54,33 @@ const Info = styled.div`
     font-size: 40px;
     font-weight: bold;
   }
-`;
 
-const Sub = styled.div`
   p {
     font-size: 20px;
     margin-top: 30px;
     line-height: 30px;
   }
   height: 100%;
+  @media screen and (max-width: 1000px) {
+    p {
+      font-size: 15px;
+      margin-top: 10px;
+      line-height: 20px;
+      padding: 0 ${mainStyle.moPadding};
+    }
+  }
+  @media screen and (max-width: 1000px) {
+    h3 {
+      margin-left: 10px;
+      font-size: 20px;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    h3 {
+      font-size: 15px;
+    }
+  }
 `;
 
 const Review = styled.div`
@@ -141,14 +166,10 @@ const TodayPick = () => {
 
             <Info>
               <h3>{currentMovie.title}</h3>
-              <Sub>
-                <p>개봉일: {currentMovie.release_date}</p>
-                <p>평점: {currentMovie.vote_average}점</p>
-                <p>
-                  줄거리:
-                  <br /> {currentMovie.overview}
-                </p>
-              </Sub>
+
+              <p>개봉일: {currentMovie.release_date}</p>
+              <p>평점: {currentMovie.vote_average}점</p>
+              <p>줄거리: {currentMovie.overview.slice(0, 100) + "..."}</p>
             </Info>
           </Wrap>
         ) : (

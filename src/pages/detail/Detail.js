@@ -15,8 +15,12 @@ const Container = styled.section`
 
 const Bg = styled.div`
   width: 45%;
-  height: 800px;
+  aspect-ratio: 3/5;
   background: lightgray;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  border-radius: 10px;
 `;
 
 const TitleWrap = styled.div`
@@ -48,11 +52,51 @@ const TitleWrap = styled.div`
   }
 `;
 
+const Review = styled.div`
+  width: 100%;
+  height: 300px;
+  padding: ${mainStyle.moPadding};
+  margin-top: 40px;
+  background-color: black;
+  border-radius: 20px;
+  h4 {
+    font-size: 20px;
+  }
+  input {
+    margin-top: 20px;
+    width: 100%;
+    height: 60px;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: #1d1d1d;
+    font-size: 20px;
+    color: white;
+  }
+  button {
+    margin-top: 20px;
+    height: 40px;
+    background-color: #1d1d1d;
+    color: white;
+    border-radius: 20px;
+  }
+`;
+
 const Detail = () => {
   const { id } = useParams();
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
+  const [reviews, setReviews] = useState({});
+  const [inputReview, setInputReview] = useState("");
 
+  // localStorage에서 리뷰 불러오기
+  useEffect(() => {
+    const storedReviews = localStorage.getItem("reviews");
+    if (storedReviews) {
+      setReviews(JSON.parse(storedReviews));
+    }
+  }, []);
+
+  // 영화 상세 데이터 불러오기
   useEffect(() => {
     (async () => {
       try {
@@ -64,6 +108,23 @@ const Detail = () => {
       }
     })();
   }, [id]);
+
+  // 리뷰 제출 함수
+  const handleReviewSubmit = () => {
+    if (inputReview.trim() === "") return;
+
+    // 현재 영화 ID에 해당하는 리뷰 목록 업데이트
+    const updatedReviews = {
+      ...reviews,
+      [id]: [...(reviews[id] || []), inputReview],
+    };
+
+    setReviews(updatedReviews);
+    setInputReview("");
+
+    // localStorage에 리뷰 저장
+    localStorage.setItem("reviews", JSON.stringify(updatedReviews));
+  };
 
   return (
     <>
@@ -92,6 +153,25 @@ const Detail = () => {
                   <p>{data.overview}</p>
                 </TitleWrap>
               </Container>
+              <Review>
+                <h4>리뷰</h4>
+                <input
+                  type="text"
+                  placeholder="여기에 리뷰를 입력하세요"
+                  value={inputReview}
+                  onChange={(e) => setInputReview(e.target.value)}
+                />
+                <button onClick={handleReviewSubmit} style={{ width: "100%" }}>
+                  리뷰 남기기
+                </button>
+                <ul style={{ marginTop: "20px" }}>
+                  {(reviews[id] || []).map((review, index) => (
+                    <li key={index} style={{ marginBottom: "5px" }}>
+                      {review}
+                    </li>
+                  ))}
+                </ul>
+              </Review>
             </Wrapper>
           )}
         </>

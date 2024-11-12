@@ -6,9 +6,10 @@
 
 4. 홈페이지(today's pick), 디테일 페이지 영화 설명 하단 부분 리뷰 기능 추가
 
-5. 반응형: 가로 600px~모바일 : 우측 상단 3개 메뉴를 메뉴바로 통합함,(메뉴 바 클릭 시 3개 메뉴가 나오도록)
+5. home.js 메인 콘텐츠 아래에 todaypick.js 컴포넌트 추가해서 리뷰를 남길 수 있도록
 
-6. home.js 메인 콘텐츠 아래에 todaypick.js 컴포넌트 추가해서 리뷰를 남길 수 있도록
+6. localstorage 함수를 사용하여 남긴 리뷰가 남아있도록 구성
+   ex:const storedReviews = localStorage.getItem("reviews");
 
 - [x] Router 설정
 - [x] 각 폴더, 파일 등 구성
@@ -21,6 +22,7 @@
 - [] Deploy
 
 설치항목
+
 - [x] npm i react-router-dom
 - [x] npm i styled-components
 - [x] npm i styled-reset
