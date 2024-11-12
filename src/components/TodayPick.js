@@ -3,6 +3,7 @@ import { popular } from "../api";
 import { W500_URL } from "../constants/ImageUrl";
 import { styled } from "styled-components";
 import { mainStyle } from "../GlobalStyle";
+import { Link } from "react-router-dom";
 
 const Container = styled.div`
   margin-top: 150px;
@@ -24,6 +25,10 @@ const AllWrap = styled.div``;
 const Wrap = styled.div`
   display: flex;
   margin-top: 20px;
+  @media screen and (max-width: 600px) {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 const Image = styled.div`
@@ -126,11 +131,14 @@ const TodayPick = () => {
         {currentMovie ? (
           <Wrap>
             <Image>
-              <img
-                src={`${W500_URL}${currentMovie.poster_path}`} // W500_URL 사용
-                alt={currentMovie.title}
-              />
+              <Link to={`/detail/${currentMovie.id}`}>
+                <img
+                  src={`${W500_URL}${currentMovie.poster_path}`} // W500_URL 사용
+                  alt={currentMovie.title}
+                />
+              </Link>
             </Image>
+
             <Info>
               <h3>{currentMovie.title}</h3>
               <Sub>

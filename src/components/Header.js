@@ -13,19 +13,33 @@ const Container = styled.header`
   left: 0;
   width: 100%;
   background-color: black;
-  @media screen and (max-width: 650px) {
-    padding: 20px ${mainStyle.moPadding};
-  }
   z-index: 10;
+
+  @media screen and (max-width: 1200px) {
+    padding: 20px 5%;
+  }
+
+  @media screen and (max-width: 600px) {
+    padding: 20px ${mainStyle.moPadding};
+    height: 50px;
+  }
 `;
 
 const Logo = styled.h3`
-  font-size: 26px;
+  font-size: 30px;
   font-family: "Racing Sans One", sans-serif;
   font-weight: 400;
   font-style: normal;
   a {
     color: #f90556;
+  }
+  @media screen and (max-width: 1200px) {
+    padding: 20px calc(${mainStyle.pcPadding} / 2);
+    font-size: 20px;
+  }
+
+  @media screen and (max-width: 600px) {
+    padding: 20px ${mainStyle.moPadding};
   }
 `;
 
@@ -37,11 +51,15 @@ const Menu = styled.ul`
     margin-right: 100px;
     font-size: 24px;
     font-weight: bold;
-    @media screen and (max-width: 650px) {
-      margin-left: 50px;
-    }
+
     a {
       color: #fff;
+    }
+    @media screen and (max-width: 1000px) {
+      margin-right: ${mainStyle.moPadding};
+    }
+    @media screen and (max-width: 600px) {
+      font-size: 12px;
     }
   }
 `;
@@ -56,6 +74,12 @@ const LoginBox = styled.div`
   font-size: 20px;
   font-weight: bold;
   border-radius: 30px;
+  @media screen and (max-width: 1200px) {
+    font-size: 15px;
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+  }
 `;
 
 const Header = () => {

@@ -2,7 +2,7 @@ import { createGlobalStyle } from "styled-components";
 import reset from "styled-reset";
 
 export const mainStyle = {
-  pcPadding: "10%",
+  pcPadding: "15%",
   moPadding: "20px",
 };
 
@@ -18,6 +18,7 @@ body{
     background-color: #1d1d1d;
     color: white;
 }
+
 
 img{
     width: 100%;

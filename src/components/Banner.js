@@ -8,6 +8,9 @@ const MainBanner = styled.section`
     center/cover;
   padding: 0 ${mainStyle.moPadding};
   position: relative;
+  @media screen and (max-width: 1200px) {
+    height: 80vh;
+  }
   @media screen and (max-width: 450px) {
     padding: 0 ${mainStyle.moPadding};
   }
@@ -29,16 +32,18 @@ const TitleWrap = styled.div`
     line-height: 20px;
     opacity: 0.7;
   }
-  @media screen and (max-width: 450px) {
-    padding: 0 ${mainStyle.pcPadding};
+
+  @media screen and (max-width: 600px) {
+    padding: 0 ${mainStyle.moPadding};
     width: 60%;
+    bottom: 100px;
     h3 {
-      font-size: 35px;
+      font-size: 30px;
     }
 
     p {
       font-size: 14px;
-      line-height: 30px;
+      line-height: 20px;
     }
   }
 `;

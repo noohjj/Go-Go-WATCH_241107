@@ -6,7 +6,6 @@ import { mainStyle } from "../../GlobalStyle";
 import Loading from "../../components/Loading";
 import { ORIGINAL_URL } from "../../constants/ImageUrl";
 import Wrapper from "../../components/Wrapper";
-import Footer from "../../components/Footer";
 
 const Container = styled.section`
   padding: 150px ${mainStyle.pcPadding};
@@ -93,7 +92,6 @@ const Detail = () => {
                   <p>{data.overview}</p>
                 </TitleWrap>
               </Container>
-              <Footer/>
             </Wrapper>
           )}
         </>

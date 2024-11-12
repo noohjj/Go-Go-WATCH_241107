@@ -8,22 +8,24 @@
 
 5. 반응형: 가로 600px~모바일 : 우측 상단 3개 메뉴를 메뉴바로 통합함,(메뉴 바 클릭 시 3개 메뉴가 나오도록)
 
-- [] Router 설정
-- [] 각 폴더, 파일 등 구성
-- [] api 설정
-- [] Loading, Header, Footer 글로벌 컴포넌트 구성
-- [] 웹 폰트 설정
+6. home.js 메인 콘텐츠 아래에 todaypick.js 컴포넌트 추가해서 리뷰를 남길 수 있도록
+
+- [x] Router 설정
+- [x] 각 폴더, 파일 등 구성
+- [x] api 설정
+- [x] Loading, Header, Footer 글로벌 컴포넌트 구성
+- [x] 웹 폰트 설정
 - [] 각 페이지 UI 작업 및 반응형
 - [] Helmet
 - [] Header Scroll Event
 - [] Deploy
 
 설치항목
-- [] npm i react-router-dom
-- [] npm i styled-components
-- [] npm i styled-reset
-- [] swiper
-- [] font-awesome
-- [] npm i react-hook-form
-- [] helmet-async
-- [] react icons
+- [x] npm i react-router-dom
+- [x] npm i styled-components
+- [x] npm i styled-reset
+- [x] swiper
+- [x] font-awesome
+- [x] npm i react-hook-form
+- [x] helmet-async
+- [x] react icons

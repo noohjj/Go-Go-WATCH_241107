@@ -4,13 +4,14 @@ import "swiper/css";
 import Movies from "../../components02/Movies";
 import Banner from "../../components/Banner";
 import TodayPick from "../../components/TodayPick";
-import Footer from "../../components/Footer";
+import Loading from "../../components/Loading";
 
 const Home = () => {
   const [nowData, setNowData] = useState();
   const [popData, setPopData] = useState();
   const [topData, setTopData] = useState();
   const [upData, setUpData] = useState();
+  const [isLoading, setIsLoading] = useState(true);
 
   const params = {
     spaceBetween: 10,
@@ -43,6 +44,7 @@ const Home = () => {
         setPopData(pop);
         setTopData(top);
         setUpData(up);
+        setIsLoading(false);
       } catch (error) {
         console.log(error);
       }
@@ -51,16 +53,22 @@ const Home = () => {
 
   return (
     <>
-      {nowData && (
-        <div>
-          <Banner data={nowData} />
+      {isLoading ? (
+        <Loading />
+      ) : (
+        <>
+          {nowData && (
+            <div>
+              <Banner data={nowData} />
 
-          <TodayPick />
-          <Movies data={nowData} title="현재 상영중" />
-          <Movies data={popData} title="인기영화" />
-          <Movies data={topData} title="랭킹 영화" />
-          <Movies data={upData} title="개봉 예정 영화" />
-        </div>
+              <TodayPick />
+              <Movies data={nowData} title="현재 상영중" />
+              <Movies data={popData} title="인기영화" />
+              <Movies data={topData} title="랭킹 영화" />
+              <Movies data={upData} title="개봉 예정 영화" />
+            </div>
+          )}
+        </>
       )}
     </>
   );
