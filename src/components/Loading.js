@@ -1,4 +1,4 @@
-import { PacmanLoader } from "react-spinners";
+import { RingLoader } from "react-spinners";
 import styled from "styled-components";
 
 const Container = styled.div`
@@ -12,7 +12,7 @@ const Container = styled.div`
 const Loading = () => {
   return (
     <Container>
-      <PacmanLoader color="darkcyan" />
+      <RingLoader color="#f90556" />
     </Container>
   );
 };

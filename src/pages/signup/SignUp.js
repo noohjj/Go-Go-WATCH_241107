@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { mainStyle } from "../../GlobalStyle";
 import { Link } from "react-router-dom";
 import slate from "../../img/slate.jpg";
+import PageTitle from "../../components/PageTitle";
 
 const Container = styled.div`
   height: 100vh;
@@ -43,8 +44,8 @@ const Wrap = styled.section`
   padding: 0 ${mainStyle.moPadding};
   align-items: center;
   @media screen and (max-width: 600px) {
-    width: 250px;
-    height: 350px;
+    width: 400px;
+    height: 600px;
   }
 `;
 
@@ -107,7 +108,7 @@ const SignGo = styled.div`
   }
 `;
 
-export const SignUp = () => {
+const SignUp = () => {
   useScrollTop();
 
   const {
@@ -122,16 +123,17 @@ export const SignUp = () => {
     localStorage.setItem("username", username);
     localStorage.setItem("password", password);
 
-    alert("가입 되었습니다 👏🏻😊");
+    alert("가입 되었습니다 Go Go!");
     navi("/signin");
   };
 
   return (
     <Container>
+      <PageTitle title = "회원가입"/>
       <BackBG />
       <Wrap>
         <Box>
-          <h3>Go-Go 로그인</h3>
+          <h3>Go-Go 회원가입</h3>
           <Form onSubmit={handleSubmit(loginHandler)}>
             <input
               {...register("username", {
@@ -168,15 +170,11 @@ export const SignUp = () => {
             />
             <ErrorMessage>{errors?.password?.message}</ErrorMessage>
 
-            <button>로그인</button>
-            <ErrorMessage style={{ textAlign: "center" }}>
-              {isLogin}
-            </ErrorMessage>
             <button>가입</button>
 
             <SignGo>
-              이미 YEAHFLIX 회원인가요? 지금 &nbsp;
-              <Link to={"/login"}>로그인</Link> 하세요 😊
+              이미 Go-Go WATCH 회원인가요? 그럼
+              <Link to={"/login"}><h4>로그인 Go-Go</h4></Link>
             </SignGo>
           </Form>
         </Box>
@@ -184,3 +182,5 @@ export const SignUp = () => {
     </Container>
   );
 };
+
+export default SignUp;

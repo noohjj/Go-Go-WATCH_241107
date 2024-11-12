@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { mainStyle } from "../../GlobalStyle";
 import { Link } from "react-router-dom";
 import slate from "../../img/slate.jpg";
+import PageTitle from "../../components/PageTitle";
 
 const Container = styled.div`
   height: 100vh;
@@ -44,8 +45,8 @@ const Wrap = styled.section`
   padding: 0 ${mainStyle.moPadding};
   align-items: center;
   @media screen and (max-width: 600px) {
-    width: 250px;
-    height: 350px;
+    width: 400px;
+    height: 600px;
   }
 `;
 
@@ -135,6 +136,7 @@ const Login = () => {
 
   return (
     <Container>
+      <PageTitle title="로그인"/>
       <BackBG />
       <Wrap>
         <Box>

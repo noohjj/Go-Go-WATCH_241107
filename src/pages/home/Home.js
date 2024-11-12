@@ -5,6 +5,7 @@ import Movies from "../../components02/Movies";
 import Banner from "../../components/Banner";
 import TodayPick from "../../components/TodayPick";
 import Loading from "../../components/Loading";
+import PageTitle from "../../components/PageTitle";
 
 const Home = () => {
   const [nowData, setNowData] = useState();
@@ -53,15 +54,19 @@ const Home = () => {
 
   return (
     <>
+      
+    <div>
       {isLoading ? (
         <Loading />
       ) : (
         <>
+          <PageTitle title="HOME"/>
           {nowData && (
-            <div>
+            <div>          
+              
               <Banner data={nowData} />
 
-              <TodayPick />
+              <TodayPick/>
               <Movies data={nowData} title="현재 상영중" />
               <Movies data={popData} title="인기영화" />
               <Movies data={topData} title="랭킹 영화" />
@@ -70,6 +75,8 @@ const Home = () => {
           )}
         </>
       )}
+    </div>
+  
     </>
   );
 };

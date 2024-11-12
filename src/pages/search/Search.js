@@ -5,6 +5,8 @@ import Wrapper from "../../components/Wrapper";
 import { searchMovie } from "../../api";
 import { useState } from "react";
 import { NO_IMG, W500_URL } from "../../constants/ImageUrl";
+import { mainStyle } from "../../GlobalStyle";
+import PageTitle from "../../components/PageTitle";
 
 const Form = styled.form`
   input {
@@ -21,10 +23,14 @@ const Form = styled.form`
 `;
 
 const Text = styled.div`
-  padding: 300px;
+  padding: 300px ${mainStyle.pcPadding};
   font-size: 50px;
   font-weight: 500;
   text-align: center;
+  @media screen and (max-width:1000px){
+    font-size: 30px;
+    padding: 150px ${mainStyle.moPadding};
+  }
 `;
 
 const ConWrap = styled.div`
@@ -33,6 +39,13 @@ const ConWrap = styled.div`
   grid-template-columns: repeat(5, 1fr);
   row-gap: 50px;
   column-gap: 30px;
+  @media screen and (max-width:600px){
+    margin-top:50px;
+    display:grid;
+    grid-template-columns:repeat(3, 0.5fr);
+    row-gap: 20px;
+    column-gap:10px;
+  }
 `;
 
 const Con = styled.div`
@@ -48,6 +61,11 @@ const Con = styled.div`
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+  @media screen and (max-width:600px){
+    img{
+    width:100%;
+    height:50%;
   }
 `;
 
@@ -74,6 +92,7 @@ const Search = () => {
 
   return (
     <Wrapper>
+      <PageTitle title = "검색"/>
       <Form onSubmit={handleSubmit(onSearch)}>
         <input
           {...register("search", {

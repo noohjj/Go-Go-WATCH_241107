@@ -6,11 +6,18 @@ import { mainStyle } from "../../GlobalStyle";
 import Loading from "../../components/Loading";
 import { ORIGINAL_URL } from "../../constants/ImageUrl";
 import Wrapper from "../../components/Wrapper";
+import PageTitle from "../../components/PageTitle";
 
 const Container = styled.section`
   padding: 150px ${mainStyle.pcPadding};
   display: flex;
   justify-content: space-between;
+  @media screen and (max-width:1000px){
+    padding:100px ${mainStyle.moPadding};
+  }
+  @media screen and (max-width:600px){
+    padding:100px ${mainStyle.moPadding};
+  }
 `;
 
 const Bg = styled.div`
@@ -163,6 +170,7 @@ const Detail = () => {
         <Loading />
       ) : (
         <>
+          <PageTitle title={data?.title} />
           {data && (
             <Wrapper>
               <Container>
@@ -181,7 +189,7 @@ const Detail = () => {
                       <li key={genre.id}>{genre.name}</li>
                     ))}
                   </ul>
-                  <p>{data.overview}</p>
+                  <p>{data.overview.slice(0,200) + "..."}</p>
                 </TitleWrap>
               </Container>
               <Review>
