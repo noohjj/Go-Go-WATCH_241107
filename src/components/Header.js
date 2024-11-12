@@ -40,6 +40,7 @@ const Logo = styled.h3`
 
   @media screen and (max-width: 600px) {
     padding: 20px ${mainStyle.moPadding};
+    font-size:15px;
   }
 `;
 
@@ -56,7 +57,7 @@ const Menu = styled.ul`
       color: #fff;
     }
     @media screen and (max-width: 1000px) {
-      margin-right: ${mainStyle.moPadding};
+      margin-right: 10px;
     }
     @media screen and (max-width: 600px) {
       font-size: 12px;
