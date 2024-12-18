@@ -1,3 +1,5 @@
+# 사이트 개요
+
 1. 홈페이지에서 today's pick, 인기영화, 개봉예정 영화, 평점 높은 영화, 상영 중 영화 4개 카테고리 별로 바로 확인이 가능
 
 2. 오른쪽 상단 검색 기능으로 과거 상영했던 영화 정보(제목, 런타임, 출연 배우, 줄거리, 장르)를 확인 가능하며, 리뷰 남기는 것 가능 - detail 페이지
@@ -23,7 +25,7 @@
 - [x] Header Scroll Event
 - [x] Deploy
 
-설치항목
+# 설치항목
 
 - [x] npm i react-router-dom
 - [x] npm i styled-components
